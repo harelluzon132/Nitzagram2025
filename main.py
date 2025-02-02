@@ -11,6 +11,7 @@ from classes.TextPost import *
 
 def main():
 
+
     i=0
     # Set up the game display, clock and headline
     pygame.init()
