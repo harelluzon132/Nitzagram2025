@@ -2,7 +2,8 @@ import pygame
 from helpers import *
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
 from buttons import  *
-from classes.Post import Post
+from classes.Post import *
+from classes.TextPost import *
 
 
 def main():
@@ -20,10 +21,12 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
-
+    text_post = TextPost("noamberko", "Israel", "jnkn", 0, [], "wolcome to my nitzagram", (0, 0, 0), (140, 225, 0))
+    text_post.display()
 
     running = True
     while running:
+
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
         for event in pygame.event.get():
@@ -34,7 +37,7 @@ def main():
                 if mouse_in_button(like_button, pos):
                     Post.add_like()
                 elif mouse_in_button(comment_button, pos):
-                    Post.add_comment()
+                    text_post.add_comment()
                 elif mouse_in_button(click_post_button, pos):
                     pass
                 elif mouse_in_button(view_more_comments_button, pos):
@@ -43,6 +46,7 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
+        TextPost.display(text_post)
 
 
 

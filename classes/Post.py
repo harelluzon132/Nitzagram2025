@@ -1,5 +1,7 @@
 import pygame
 
+import helpers
+from classes.Comment import *
 from constants import *
 from helpers import screen
 pygame.init()
@@ -17,16 +19,11 @@ class Post:
         self.comments_display_index=0
 
     def add_like(self):
-        self.likes_counter+=1
-    def add_comment(self,text):
-        self.comments.append(text,)
-
-
-    def add_like(self):
-        pass
-
-    def add_comment(text):
-        pass
+        self.likes_counter += 1
+    def add_comment(self):
+        helpers.draw_comment_text_box()
+        text = helpers.read_comment_from_user()
+        self.comments.append(Comment(text))
 
     def display(self):
         user_name_onscreen=pygame.font.SysFont(self.username,UI_FONT_SIZE)
@@ -76,3 +73,5 @@ class Post:
             position_index += 1
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:
                 break
+
+
