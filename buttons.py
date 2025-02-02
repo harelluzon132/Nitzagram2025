@@ -1,4 +1,4 @@
-# Create Buttons: like, comment, change_image, view more comments
+# Create Buttons: like, Comment, change_image, view more comments
 from classes.Button import Button
 from constants import *
 

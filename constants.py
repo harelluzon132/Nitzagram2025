@@ -16,7 +16,7 @@ LIKE_BUTTON_Y_POS = 0.622 * WINDOW_HEIGHT
 LIKE_BUTTON_WIDTH = 0.067 * WINDOW_WIDTH
 LIKE_BUTTON_HEIGHT = 0.033 * WINDOW_HEIGHT
 
-# Add comment button proportions and position on the screen
+# Add Comment button proportions and position on the screen
 COMMENT_BUTTON_X_POST = 0.195 * WINDOW_WIDTH
 COMMENT_BUTTON_Y_POS = 0.622 * WINDOW_HEIGHT
 COMMENT_BUTTON_WIDTH = 0.067 * WINDOW_WIDTH
@@ -53,7 +53,7 @@ VIEW_MORE_COMMENTS_Y_POS = 0.85 * WINDOW_HEIGHT
 VIEW_MORE_COMMENT_HEIGHT = 0.017 * WINDOW_HEIGHT
 VIEW_MORE_COMMENT_WIDTH = 0.233 * WINDOW_WIDTH
 
-# The location of the first comment on the screen and the comment line height
+# The location of the first Comment on the screen and the Comment line height
 FIRST_COMMENT_X_POS = 0.111 * WINDOW_WIDTH
 FIRST_COMMENT_Y_POS = 0.7 * WINDOW_HEIGHT
 COMMENT_LINE_HEIGHT = 20

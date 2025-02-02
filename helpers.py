@@ -58,20 +58,20 @@ def draw_comment_text_box():
     pygame.display.flip()
 
 
-# Get the comment that the user typed will using Nitzagram and translate it
+# Get the Comment that the user typed will using Nitzagram and translate it
 # to string
 def read_comment_from_user():
     """
-    Read the comment the user type.
+    Read the Comment the user type.
     :return: string
-        return typed comment
+        return typed Comment
     """
     pressed_enter = False
     new_comment = ""
-    # Draw the rectangle where the user can see the comment he typed
+    # Draw the rectangle where the user can see the Comment he typed
     draw_comment_text_box()
     while not pressed_enter:
-        # get the string for comment
+        # get the string for Comment
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 draw_comment_text_box()
