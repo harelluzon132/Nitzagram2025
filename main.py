@@ -1,9 +1,12 @@
 import pygame
+
+from Image_post import Image_Post
 from helpers import *
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
 from buttons import  *
 from classes.Post import *
 from classes.TextPost import *
+
 
 
 def main():
@@ -26,7 +29,6 @@ def main():
 
     # TODO: add a post here
     text_post = TextPost("noamberko", "Israel", "jnkn", 0, [], "wolcome to my nitzagram", (0, 0, 0), (140, 225, 0))
-    text_post.display()
 
     running = True
     while running:
@@ -51,8 +53,6 @@ def main():
                     curr.display_comments()
 
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
-        screen.fill(BLACK)
-        screen.blit(background, (0, 0))
 
 
 
