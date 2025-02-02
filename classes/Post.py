@@ -22,12 +22,6 @@ class Post:
         self.comments.append(text,)
 
 
-    def add_like(self):
-        pass
-
-    def add_comment(text):
-        pass
-
     def display(self):
         user_name_onscreen=pygame.font.SysFont(self.username,UI_FONT_SIZE)
         user_name_message=user_name_onscreen.render(self.username ,True,(0,255,255))
