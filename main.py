@@ -7,9 +7,12 @@ from classes.TextPost import *
 
 
 def main():
+
+    i=0
     # Set up the game display, clock and headline
     pygame.init()
-
+    image_post1=Image_Post(",harelluzon","Images/ronaldo.jpg","beitshan","hur hur hur hur ",0,[])
+    image_post2 = Image_Post(",harelluzon", "Images/noa_kirel.jpg", "beitshan", "hur hur hur hur ", 0, [])
     # Change the title of the window
     pygame.display.set_caption('Nitzagram')
 
@@ -19,6 +22,7 @@ def main():
     background = pygame.image.load('Images/background.png')
     background = pygame.transform.scale(background,
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
+    post=[image_post1,image_post2 ]
 
     # TODO: add a post here
     text_post = TextPost("noamberko", "Israel", "jnkn", 0, [], "wolcome to my nitzagram", (0, 0, 0), (140, 225, 0))
@@ -26,7 +30,10 @@ def main():
 
     running = True
     while running:
-
+        curr=post[i]
+        screen.fill(BLACK)
+        screen.blit(background, (0, 0))
+        curr.display()
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
         for event in pygame.event.get():
@@ -35,18 +42,17 @@ def main():
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
                 if mouse_in_button(like_button, pos):
-                    Post.add_like()
+                    curr.add_like()
                 elif mouse_in_button(comment_button, pos):
-                    text_post.add_comment()
-                elif mouse_in_button(click_post_button, pos):
-                    pass
+                    curr.add_comment()
+                elif mouse_in_button(click_post_button, pos,):
+                    i=(i+1)%len(post)
                 elif mouse_in_button(view_more_comments_button, pos):
-                    Post.display_comments()
+                    curr.display_comments()
 
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
-        TextPost.display(text_post)
 
 
 
