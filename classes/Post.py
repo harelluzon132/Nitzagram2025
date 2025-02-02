@@ -12,6 +12,12 @@ class Post:
         #TODO: write me!
         pass
 
+    def add_like(self):
+        pass
+
+    def add_comment(text):
+        pass
+
     def display(self):
         """
         Display the Post image/Text, description, location, likes and comments

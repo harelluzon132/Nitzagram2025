@@ -1,6 +1,8 @@
 import pygame
-from helpers import screen
+from helpers import *
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
+from buttons import  *
+from classes.Post import Post
 
 
 def main():
@@ -19,6 +21,7 @@ def main():
 
     # TODO: add a post here
 
+
     running = True
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
@@ -26,10 +29,22 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                pos = pygame.mouse.get_pos()
+                if mouse_in_button(like_button, pos):
+                    Post.add_like()
+                elif mouse_in_button(comment_button, pos):
+                    Post.add_comment()
+                elif mouse_in_button(click_post_button, pos):
+                    pass
+                elif mouse_in_button(view_more_comments_button, pos):
+                    Post.display_comments()
 
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
+
+
 
         # Update display - without input update everything
         pygame.display.update()
