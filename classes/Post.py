@@ -38,11 +38,7 @@ class Post:
         description=pygame.font.SysFont(self.description,UI_FONT_SIZE )
         description_message=description.render(self.description ,True,(44,55,66))
         screen.blit(description_message,(DESCRIPTION_TEXT_X_POS,DESCRIPTION_TEXT_Y_POS  ))
-        comments_onscreen=pygame.font.SysFont(self.comments,UI_FONT_SIZE)
-        comments_message=comments_onscreen.render(str(self.comments),True,(99,88,77))
-        screen.blit(comments_message,(COMMENT_BUTTON_X_POST,COMMENT_BUTTON_Y_POS ))
-        # TODO: write me!
-        pass
+        self.display_comments()
 
     def display_comments(self):
 
@@ -69,6 +65,7 @@ class Post:
         for i in range(0, len(self.comments)):
             if position_index >= len(self.comments):
                 position_index = 0
+            print(self.comments[position_index].comment)
             self.comments[position_index].display(i)
             position_index += 1
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:

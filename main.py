@@ -48,6 +48,7 @@ def main():
                     curr.add_like()
                 elif mouse_in_button(comment_button, pos):
                     curr.add_comment()
+
                 elif mouse_in_button(click_post_button, pos,):
                     i=(i+1)%len(post)
                 elif mouse_in_button(view_more_comments_button, pos):
